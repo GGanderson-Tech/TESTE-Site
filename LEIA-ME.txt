@@ -1,0 +1,51 @@
+# Portal WordPress da Câmara de Pinhalzinho — versão 2
+
+Tema responsivo com identidade azul `#022264`, realces amarelos `#fef431`, brasão e fotografia do acervo original. Plugin independente mantém vereadores, sessões, proposituras, licitações e documentos quando o tema é trocado.
+
+## Instalação da entrega completa
+
+1. Use uma instalação de homologação e faça backup antes de alterar um site existente. Requer WordPress 6.5+ e PHP 7.4+; prefira versões com suporte atual.
+2. Instale `pinhalzinho.zip` em **Aparência → Temas → Enviar tema** e ative Câmara Pinhalzinho.
+3. Reserve espaço para duas cópias do acervo na hospedagem: uma no pacote do plugin e outra na biblioteca de mídia. Extraia o pacote completo. Envie a pasta `pinhalzinho-acervo` inteira, incluindo `acervo/manifest.json` e `acervo/files/`, para `wp-content/plugins/`, usando SFTP ou o gerenciador de arquivos da hospedagem. O acervo volumoso não deve depender do limite de upload de arquivos do painel.
+4. Ative **Pinhalzinho — Acervo Legislativo** em Plugins.
+5. Vá a **Ferramentas → Acervo Pinhalzinho** e clique em **Importar acervo e configurar navegação**. Aguarde os lotes; a tela informa o progresso e eventuais erros. Mantenha a página aberta. Uma interrupção pode ser retomada pelo mesmo botão; o importador reconhece seus registros e anexos anteriores.
+6. Confira o fuso **America/Sao_Paulo** em Configurações → Geral. Confira o menu, logo, fotografia, contatos e URLs em **Aparência → Personalizar → Câmara: identidade e serviços**. O importador cria o menu principal somente se nenhum menu estiver associado; preserva o menu escolhido pelo administrador.
+7. Salve os links permanentes se a hospedagem usar URLs amigáveis. Os redirecionamentos dos caminhos `.html` e `wa_files/` dependem de o servidor encaminhar esses caminhos ao WordPress. Arquivos físicos antigos podem ter precedência: revise as regras no servidor antes de removê-los.
+
+O ZIP do tema sozinho contém o visual, brasão e foto principal; ele não instala milhares de PDFs no banco de dados. A entrega completa inclui o plugin e a cópia de acervo para executar a importação acima. O site oficial não é alterado por estas operações locais.
+
+## Conteúdo importado e limites
+
+O inventário foi extraído do índice público, dos menus, das páginas HTML e de referências a arquivos no mesmo domínio. Páginas e PDFs recuperáveis são preservados com fonte; fotos dos nove vereadores são associadas aos perfis correspondentes. A orientação original das imagens é respeitada por CSS, sem editar os arquivos. A fotografia principal mantém o crédito visível da imagem original.
+
+O inventário não permite afirmar que arquivos sem qualquer referência pública foram encontrados. As respostas recusadas, documentos inexistentes, transferências incompletas e tipos não suportados ficam registrados em `PENDENCIAS.json` e no manifesto. As quantidades finais constam em `HISTORICO-ACOES.txt`.
+
+Os títulos dos registros PDF reproduzem nomes de arquivos, convertendo a codificação do sistema legado para texto legível. Ano e assunto extraídos desses nomes são pistas para navegação, não validação jurídica da data, vigência ou autoria. Os arquivos mantêm seu conteúdo. PDFs digitalizados sem camada de texto exigem OCR para busca interna do conteúdo; a busca desta versão cobre títulos e textos HTML, sem alegar indexação integral dos PDFs.
+
+As páginas históricas mantêm contexto; a data de importação não é apresentada como data do ato. O destaque “Ato do Presidente nº 08/2026” do portal original aponta para o mesmo arquivo de um ato de 2022: esse link não foi reproduzido como destino confirmado. A pendência deve ser resolvida pela administração da Câmara. Nenhum documento alternativo foi inventado.
+
+As integrações de Transparência, Ouvidoria/e-SIC, legislação, Diário Oficial e YouTube continuam sendo serviços externos. O tema não implementa nem modifica esses sistemas. Fotografias e documentos mantêm os créditos e direitos de seus titulares; a licença GPL se aplica ao código criado.
+
+## Navegação e manutenção
+
+- Menus com até dois níveis visuais, botões de submenu para toque/teclado e fechamento por Escape.
+- Busca do portal inclui os tipos legislativos. Os arquivos possuem filtros por assunto, ano e autor quando identificados na fonte. Campos desconhecidos ficam sem classificação.
+- Vereadores, sessões, proposituras, licitações e documentos possuem cadastros separados no plugin. Páginas históricas com vários processos/atos mantêm seu agrupamento original; não foram atribuídos estados de tramitação ou vigência sem evidência.
+- O arquivo do portal legado permanece consultável; novos comunicados podem ser publicados com posts na categoria `noticias`.
+- Menu e preferências de usuários existentes são preservados. Não há instalação ou importação automática ao simplesmente ativar o tema.
+
+## Desenvolvimento e verificações
+
+Use o checkout existente, sem criar worktrees. O WordPress descartável está em `/workspace/.pinhalzinho-dev/wordpress`, com PHP local e SQLite somente para desenvolvimento. Não há dependência de SQLite para a hospedagem WordPress de produção.
+
+```sh
+/workspace/.pinhalzinho-dev/php-run -S 127.0.0.1:8080 -t /workspace/.pinhalzinho-dev/wordpress
+python3 tools/smoke-v2.py
+find pinhalzinho pinhalzinho-acervo -name '*.php' -exec /workspace/.pinhalzinho-dev/php-run -l {} \;
+node --check pinhalzinho/assets/main.js
+python3 tools/package.py
+```
+
+O teste funcional verifica brasão, foto real, nove vereadores, layouts de 320 a 1920 px, submenus, contraste persistente, texto ampliado, filtros, busca, detalhe de perfil, preservação da fonte, redirecionamento legado, licitações e 404. Resultados em `docs/checks-v2.json`; capturas em `docs/desktop-v2.png` e `docs/mobile-v2.png`. Essas verificações não substituem auditoria WCAG/eMAG ou revisão jurídica do acervo.
+
+Ferramentas de coleta: `tools/collect_portal.py` (Python, beautifulsoup4 e httpx), `tools/prepare_acervo.py`, `tools/import-local.php`. A coleta usa TLS verificado, cache local e checksum SHA-256; não precisa de credenciais. As ferramentas `import-local.php` e `sync-local-import.php` são restritas ao WordPress descartável em 127.0.0.1. Não use sincronização de homologação em um banco de produção.

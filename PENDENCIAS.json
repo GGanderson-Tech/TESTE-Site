@@ -1,0 +1,174 @@
+[
+  {
+    "path": "4.PDF",
+    "error": "Client error '404 Not Found' for url 'https://www.camarapinhalzinho.sp.gov.br/4.PDF'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+  },
+  {
+    "path": "wa_files/ANEXO_20II-_20DESPESA_20POR_20FUN_C3_87_C3_83O_20RREO_2018.PDF",
+    "error": "Client error '404 Not Found' for url 'https://www.camarapinhalzinho.sp.gov.br/wa_files/ANEXO_20II-_20DESPESA_20POR_20FUN_C3_87_C3_83O_20RREO_2018.PDF'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+  },
+  {
+    "path": "wa_files/ANEXO_20VI_20-_20RESULTADO_20NOMINAL_20RREO_2018.pdf",
+    "error": "Client error '404 Not Found' for url 'https://www.camarapinhalzinho.sp.gov.br/wa_files/ANEXO_20VI_20-_20RESULTADO_20NOMINAL_20RREO_2018.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+  },
+  {
+    "path": "wa_files/Anexo_20II_20-_20Demonstrativo_20das_20Despesas_20por_20Fun_C3_A7_C3_A3oSubFun_C3_A7_C3_A3o_20RREO_2.pdf",
+    "error": "Client error '404 Not Found' for url 'https://www.camarapinhalzinho.sp.gov.br/wa_files/Anexo_20II_20-_20Demonstrativo_20das_20Despesas_20por_20Fun_C3_A7_C3_A3oSubFun_C3_A7_C3_A3o_20RREO_2.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+  },
+  {
+    "path": "wa_files/Anexo_20II_20-_20Demonstrativo_20das_20Despesas_20por_20fun_C3_A7_C3_A3osubfun_C3_A7_C3_A3o_20RREO_2.pdf",
+    "error": "Client error '404 Not Found' for url 'https://www.camarapinhalzinho.sp.gov.br/wa_files/Anexo_20II_20-_20Demonstrativo_20das_20Despesas_20por_20fun_C3_A7_C3_A3osubfun_C3_A7_C3_A3o_20RREO_2.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+  },
+  {
+    "path": "wa_files/Anexo_2012_20-_20Demonstrativo_20das_20Despesas_20com_20Sa_C3_BAde_205.pdf",
+    "error": "Client error '404 Not Found' for url 'https://www.camarapinhalzinho.sp.gov.br/wa_files/Anexo_2012_20-_20Demonstrativo_20das_20Despesas_20com_20Sa_C3_BAde_205.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+  },
+  {
+    "path": "wa_files/Anexo_20II_20-_20Demonstrativo_20por_20fun_C3_A7_C3_A3o.pdf",
+    "error": "Client error '404 Not Found' for url 'https://www.camarapinhalzinho.sp.gov.br/wa_files/Anexo_20II_20-_20Demonstrativo_20por_20fun_C3_A7_C3_A3o.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+  },
+  {
+    "path": "wa_files/Balancete_20Despesa_2011-2021.pdf",
+    "error": "Client error '404 Not Found' for url 'https://www.camarapinhalzinho.sp.gov.br/wa_files/Balancete_20Despesa_2011-2021.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+  },
+  {
+    "path": "wa_files/Balancete_20Despesa_2010-2021.pdf",
+    "error": "Client error '404 Not Found' for url 'https://www.camarapinhalzinho.sp.gov.br/wa_files/Balancete_20Despesa_2010-2021.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+  },
+  {
+    "path": "wa_files/ANEXO_20V_20-_20RESULTADO_20NOMINAL_20RREO_2018.pdf",
+    "error": "Client error '404 Not Found' for url 'https://www.camarapinhalzinho.sp.gov.br/wa_files/ANEXO_20V_20-_20RESULTADO_20NOMINAL_20RREO_2018.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+  },
+  {
+    "path": "wa_files/Balancete_20da_20despesa_20dezembro_202020.pdf",
+    "error": "Client error '404 Not Found' for url 'https://www.camarapinhalzinho.sp.gov.br/wa_files/Balancete_20da_20despesa_20dezembro_202020.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+  },
+  {
+    "path": "wa_files/ANEXO_20VIII_20-_20DESPESAS_20COM_20ENSINO_20RREO_2018.PDF",
+    "error": "Client error '404 Not Found' for url 'https://www.camarapinhalzinho.sp.gov.br/wa_files/ANEXO_20VIII_20-_20DESPESAS_20COM_20ENSINO_20RREO_2018.PDF'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+  },
+  {
+    "path": "wa_files/ANEXO_20VI_20-_20RESULTADO_20PRIM_C3_81RIO_20RREO_2018.PDF",
+    "error": "Client error '404 Not Found' for url 'https://www.camarapinhalzinho.sp.gov.br/wa_files/ANEXO_20VI_20-_20RESULTADO_20PRIM_C3_81RIO_20RREO_2018.PDF'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+  },
+  {
+    "path": "wa_files/ANEXO_20III_20-_20RECEITA_20CORRENTE_20L_C3_8DQUIDA_20RREO_2018.PDF",
+    "error": "Client error '404 Not Found' for url 'https://www.camarapinhalzinho.sp.gov.br/wa_files/ANEXO_20III_20-_20RECEITA_20CORRENTE_20L_C3_8DQUIDA_20RREO_2018.PDF'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+  },
+  {
+    "path": "wa_files/ANEXO_20VIII_20-_20DESPESA_20COM_20ENSINO_20RREO_2018.PDF",
+    "error": "Client error '404 Not Found' for url 'https://www.camarapinhalzinho.sp.gov.br/wa_files/ANEXO_20VIII_20-_20DESPESA_20COM_20ENSINO_20RREO_2018.PDF'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+  },
+  {
+    "path": "wa_files/Anexo_2012_20-_20Demonstrativo_20das_20Despesas_20com_20Sa_C3_BAde_206.pdf",
+    "error": "Client error '404 Not Found' for url 'https://www.camarapinhalzinho.sp.gov.br/wa_files/Anexo_2012_20-_20Demonstrativo_20das_20Despesas_20com_20Sa_C3_BAde_206.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+  },
+  {
+    "path": "wa_files/ANEXO_20I_20-_20BALAN_C3_87O_20OR_C3_87AMENT_C3_81RIO_20RREO_2018.PDF",
+    "error": "Client error '404 Not Found' for url 'https://www.camarapinhalzinho.sp.gov.br/wa_files/ANEXO_20I_20-_20BALAN_C3_87O_20OR_C3_87AMENT_C3_81RIO_20RREO_2018.PDF'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+  },
+  {
+    "path": "wa_files/Anexo_20III_20-_20RECEITA_20CORRENTE_20LIQUIDA.pdf",
+    "error": "Client error '404 Not Found' for url 'https://www.camarapinhalzinho.sp.gov.br/wa_files/Anexo_20III_20-_20RECEITA_20CORRENTE_20LIQUIDA.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+  },
+  {
+    "path": "wa_files/ANEXO_20XII_20-_20DESPESA_20COM_20SA_C3_9ADE_20RREO_2018.pdf",
+    "error": "Client error '404 Not Found' for url 'https://www.camarapinhalzinho.sp.gov.br/wa_files/ANEXO_20XII_20-_20DESPESA_20COM_20SA_C3_9ADE_20RREO_2018.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+  },
+  {
+    "path": "wa_files/Anexo_202_20-_20Demonstrativo_20das_20Despesas_20por_20fun_C3_A7_C3_A3osubfun_C3_A7_C3_A3o_20RREO_20.pdf",
+    "error": "Client error '404 Not Found' for url 'https://www.camarapinhalzinho.sp.gov.br/wa_files/Anexo_202_20-_20Demonstrativo_20das_20Despesas_20por_20fun_C3_A7_C3_A3osubfun_C3_A7_C3_A3o_20RREO_20.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+  },
+  {
+    "path": "wa_files/Anexo_20VI_20-_20Resultado_20Prim_C3_A1rio.pdf",
+    "error": "Client error '404 Not Found' for url 'https://www.camarapinhalzinho.sp.gov.br/wa_files/Anexo_20VI_20-_20Resultado_20Prim_C3_A1rio.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+  },
+  {
+    "path": "wa_files/Anexo_20XII_20-_20Demonstrativo_20das_20Despesas_20com_20Sa_C3_BAde.pdf",
+    "error": "Client error '404 Not Found' for url 'https://www.camarapinhalzinho.sp.gov.br/wa_files/Anexo_20XII_20-_20Demonstrativo_20das_20Despesas_20com_20Sa_C3_BAde.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+  },
+  {
+    "path": "wa_files/DEMONSTRATIVO_20DE_20RESTOS_20A_20PAGAR_20RREO_2018.PDF",
+    "error": "Client error '404 Not Found' for url 'https://www.camarapinhalzinho.sp.gov.br/wa_files/DEMONSTRATIVO_20DE_20RESTOS_20A_20PAGAR_20RREO_2018.PDF'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+  },
+  {
+    "path": "wa_files/DEMONSTRATIVO_20DOS_20RESTOS_20A_20PAGAR_20RREO_2018.pdf",
+    "error": "Client error '404 Not Found' for url 'https://www.camarapinhalzinho.sp.gov.br/wa_files/DEMONSTRATIVO_20DOS_20RESTOS_20A_20PAGAR_20RREO_2018.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+  },
+  {
+    "path": "wa_files/Indica_C3_A7_C3_A3o_20N_C2_BA_20156-2026.pdf",
+    "error": "Resposta não é PDF",
+    "detail": "Resposta de verificação vazia (0 bytes)"
+  },
+  {
+    "path": "wa_files/Lei_1716_2021__E2_80_9CEstabelece_20a_20Elabora_C3_A7_C3_A3o_20do_20Plano_20Plurianual_20do_20Munic_.pdf",
+    "error": "403 Forbidden"
+  },
+  {
+    "path": "wa_files/Lei_1722_2021__E2_80_9CDisp_C3_B5e_20sobre_20denomina_C3_A7_C3_A3o_20de_20vias_20p_C3_BAblicas_20que.pdf",
+    "error": "Client error '403 Forbidden' for url 'https://www.camarapinhalzinho.sp.gov.br/wa_files/Lei_1722_2021__E2_80_9CDisp_C3_B5e_20sobre_20denomina_C3_A7_C3_A3o_20de_20vias_20p_C3_BAblicas_20que.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
+  },
+  {
+    "path": "wa_files/Lei_1715_2021__E2_80_9CAutoriza_20o_20Munic_C3_ADpio_20de_20Pinhalzinho_20a_20celebrar_20conv_C3_AAn.pdf",
+    "error": "Client error '403 Forbidden' for url 'https://www.camarapinhalzinho.sp.gov.br/wa_files/Lei_1715_2021__E2_80_9CAutoriza_20o_20Munic_C3_ADpio_20de_20Pinhalzinho_20a_20celebrar_20conv_C3_AAn.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
+  },
+  {
+    "path": "wa_files/Lei_1728_2021__E2_80_9CDisp_C3_B5e_20sobre_20autoriza_C3_A7_C3_A3o_20para_20abertura_20de_20cr_C3_A9.pdf",
+    "error": "Client error '403 Forbidden' for url 'https://www.camarapinhalzinho.sp.gov.br/wa_files/Lei_1728_2021__E2_80_9CDisp_C3_B5e_20sobre_20autoriza_C3_A7_C3_A3o_20para_20abertura_20de_20cr_C3_A9.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
+  },
+  {
+    "path": "wa_files/Lei_1998_2025__E2_80_9CDisp_C3_B5e_20sobre_20a_20rela_C3_A7_C3_A3o_20municipal_20de_20medicamentos_2.pdf",
+    "error": "Client error '403 Forbidden' for url 'https://www.camarapinhalzinho.sp.gov.br/wa_files/Lei_1998_2025__E2_80_9CDisp_C3_B5e_20sobre_20a_20rela_C3_A7_C3_A3o_20municipal_20de_20medicamentos_2.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
+  },
+  {
+    "path": "wa_files/Lei_1999_2025__E2_80_9CInstitui_20o_20_E2_80_98Dia_20do_20Evang_C3_A9lico_E2_80_99_20no_20Calend_C3_.pdf",
+    "error": "Client error '403 Forbidden' for url 'https://www.camarapinhalzinho.sp.gov.br/wa_files/Lei_1999_2025__E2_80_9CInstitui_20o_20_E2_80_98Dia_20do_20Evang_C3_A9lico_E2_80_99_20no_20Calend_C3_.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
+  },
+  {
+    "path": "wa_files/Lei_20n_C2_BA_20572_2093.pdf",
+    "error": "Client error '404 Not Found' for url 'https://www.camarapinhalzinho.sp.gov.br/wa_files/Lei_20n_C2_BA_20572_2093.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+  },
+  {
+    "path": "wa_files/Lei_20n_C2_BA_20584_2093.pdf",
+    "error": "Client error '404 Not Found' for url 'https://www.camarapinhalzinho.sp.gov.br/wa_files/Lei_20n_C2_BA_20584_2093.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+  },
+  {
+    "path": "wa_files/Lri_277_1984_0001.pdf",
+    "error": "Client error '404 Not Found' for url 'https://www.camarapinhalzinho.sp.gov.br/wa_files/Lri_277_1984_0001.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+  },
+  {
+    "path": "wa_files/Pedido_20de_20Informa_C3_A7_C3_A3o_20N_C2_BA_2019-2025.pdf",
+    "error": "Resposta não é PDF"
+  },
+  {
+    "path": "wa_files/QUADRO_206_20-_20_20APLICA_C3_87_C3_83O_20DE_20RECURSOS_20NO_20ENSINO_20RREO_2018.PDF",
+    "error": "Client error '404 Not Found' for url 'https://www.camarapinhalzinho.sp.gov.br/wa_files/QUADRO_206_20-_20_20APLICA_C3_87_C3_83O_20DE_20RECURSOS_20NO_20ENSINO_20RREO_2018.PDF'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+  },
+  {
+    "path": "wa_files/QUADRO_205_20-_20DEMONSTRATIVOS_20DAS_20RECEITAS_20E_20DESPESAS_20COM_20A_C3_87_C3_95ES_20E_20SERVI_.PDF",
+    "error": "Client error '404 Not Found' for url 'https://www.camarapinhalzinho.sp.gov.br/wa_files/QUADRO_205_20-_20DEMONSTRATIVOS_20DAS_20RECEITAS_20E_20DESPESAS_20COM_20A_C3_87_C3_95ES_20E_20SERVI_.PDF'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+  },
+  {
+    "path": "wa_files/Requerimento_20N_C2_BA_2057-2025.pdf",
+    "error": "Client error '403 Forbidden' for url 'https://www.camarapinhalzinho.sp.gov.br/wa_files/Requerimento_20N_C2_BA_2057-2025.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
+  },
+  {
+    "path": "wa_files/Lei_589_1993_.pdf",
+    "error": "Arquivo excede 64 MiB; requer transferência separada",
+    "initial_error": "Transferência excedeu 120 segundos; arquivo pendente de nova coleta"
+  },
+  {
+    "path": "wa_files/Pedido_20de_20Informa_C3_A7_C3_A3o_20N_C2_BA_2008-2025_20-_20Resposta_20_283_29.pdf",
+    "error": "Arquivo excede 64 MiB; requer transferência separada",
+    "initial_error": "Transferência excedeu 120 segundos; arquivo pendente de nova coleta"
+  },
+  {
+    "path": "wa_files/pedido_20de_20informa_C3_A7_C3_A3o_20N_C2_BA_2019-2026_20-_20Resposta.pdf",
+    "error": "Arquivo excede 64 MiB; requer transferência separada",
+    "initial_error": "Transferência excedeu 120 segundos; arquivo pendente de nova coleta"
+  },
+  {
+    "path": "index.html: Ato do Presidente nº 08/2026",
+    "error": "Fonte aponta para o mesmo PDF de Ato da Mesa nº 09/2022. Link incorreto não propagado como confirmado."
+  }
+]

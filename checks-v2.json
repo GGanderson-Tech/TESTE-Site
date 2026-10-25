@@ -1,0 +1,25 @@
+{
+  "home": "passed",
+  "council_profiles": 9,
+  "viewports": [
+    1920,
+    1440,
+    1280,
+    1024,
+    768,
+    390,
+    320
+  ],
+  "logo_and_real_photo": "passed",
+  "mobile_submenus": "passed",
+  "text_scale_to_130_percent": "passed",
+  "desktop_submenu_escape": "passed",
+  "contrast_persistence": "passed",
+  "filters_and_empty_state": "passed",
+  "legacy_profile_redirect": "passed",
+  "source_link_preserved": "passed",
+  "procurement_archive": "passed",
+  "search": "passed",
+  "404": "passed",
+  "javascript_errors": []
+}
