@@ -10,9 +10,40 @@ function ph_manifest() {
     if (!$data || empty($data['pages'])) { throw new RuntimeException('Manifesto inválido.'); }
     $cached=array($base,$data);return $cached;
 }
+/** Reconstitui PDFs grandes em uploads; nunca exige escrita na pasta do plugin. */
+function ph_materialize_asset($base,$item,$target) {
+    $root=realpath($base);$source=realpath($base.'/'.$item['local']);
+    if ($source) {
+        if (strpos($source,$root.DIRECTORY_SEPARATOR)!==0 || hash_file('sha256',$source)!==$item['sha256']) { throw new RuntimeException('Checksum da origem: '.$item['path']); }
+        if (!copy($source,$target)) { throw new RuntimeException('Falha ao copiar '.$item['path']); }
+        return;
+    }
+    if (empty($item['chunks'])) { throw new RuntimeException('Arquivo ausente: '.$item['path']); }
+    $temp=$target.'.ph-importing';$writer=fopen($temp,'wb');
+    if (!$writer) { throw new RuntimeException('Sem permissão de escrita em uploads.'); }
+    try {
+        foreach ($item['chunks'] as $part) {
+            $file=realpath($base.'/'.$part['local']);
+            if (!$file || strpos($file,$root.DIRECTORY_SEPARATOR)!==0 || hash_file('sha256',$file)!==$part['sha256']) { throw new RuntimeException('Parte ausente ou checksum inválido: '.$part['local']); }
+            $reader=fopen($file,'rb');if (!$reader) { throw new RuntimeException('Falha ao ler parte.'); }
+            try { $copied=stream_copy_to_stream($reader,$writer); } finally { fclose($reader); }
+            if ($copied!==$part['bytes']) { throw new RuntimeException('Parte incompleta: '.$part['local']); }
+        }
+        fclose($writer);$writer=null;
+        if (hash_file('sha256',$temp)!==$item['sha256']) { throw new RuntimeException('Checksum do documento reconstituído inválido.'); }
+        if (!rename($temp,$target)) { throw new RuntimeException('Falha ao concluir documento.'); }
+    } finally { if (is_resource($writer)) { fclose($writer); } if (file_exists($temp)) { unlink($temp); } }
+}
 function ph_import_batch() {
+    $lock=get_option('ph_import_lock');
+    if ($lock && microtime(true)-(float)$lock>300) { delete_option('ph_import_lock'); }
+    if (!add_option('ph_import_lock',microtime(true),'',false)) { throw new RuntimeException('Outro lote está em andamento. Aguarde e tente novamente.'); }
+    try { return ph_import_batch_unlocked(); } finally { delete_option('ph_import_lock'); }
+}
+function ph_import_batch_unlocked() {
     list($base,$data)=ph_manifest();
     $state=get_option('ph_import_state',array('asset'=>0,'page'=>0,'errors'=>array(),'done'=>false));
+    if (!empty($state['errors'])) { $state=array('asset'=>0,'page'=>0,'document'=>0,'errors'=>array(),'done'=>false); }
     if ($state['done']) { return $state; }
     if (!isset($state['document'])) { $state['document']=0; }
     require_once ABSPATH.'wp-admin/includes/image.php';
@@ -20,10 +51,10 @@ function ph_import_batch() {
     for ($n=0;$n<12 && $state['asset']<count($data['assets']);$n++,$state['asset']++) {
         $item=$data['assets'][$state['asset']];$source=realpath($base.'/'.$item['local']);
         if (isset($assets[$item['path']]) && get_post($assets[$item['path']])) { continue; }
-        if (!$source || strpos($source,realpath($base).DIRECTORY_SEPARATOR)!==0 || hash_file('sha256',$source)!==$item['sha256']) { $state['errors'][]='Integridade: '.$item['path'];continue; }
+        
         $upload=wp_upload_dir();if (!empty($upload['error'])) { throw new RuntimeException($upload['error']); }
         $name=wp_unique_filename($upload['path'],basename($item['local']));$target=$upload['path'].'/'.$name;
-        if (!copy($source,$target)) { $state['errors'][]='Cópia: '.$item['path'];continue; }
+        try { ph_materialize_asset($base,$item,$target); } catch (Throwable $e) { $state['errors'][]=$e->getMessage();continue; }
         $mime=wp_check_filetype($name);if (!$mime['type']) { unlink($target);$state['errors'][]='Tipo não suportado: '.$item['path'];continue; }
         $id=wp_insert_attachment(array('post_mime_type'=>$mime['type'],'post_title'=>sanitize_text_field(rawurldecode(basename($item['path']))),'post_status'=>'inherit'),$target,0,true);
         if (is_wp_error($id)) { $state['errors'][]=$id->get_error_message();continue; }
@@ -67,7 +98,7 @@ function ph_import_batch() {
         }
         update_option('ph_file_records',$records,false);
     }
-    if ($state['page']>=count($data['pages']) && $state['document']>=count($data['assets'])) { $urls=array();foreach ($assets as $path=>$id) { $urls[$path]=wp_get_attachment_url($id); } foreach ($map as $path=>$id) { $urls[$path]=get_permalink($id); } update_option('ph_url_map',$urls,false);ph_configure($map,$assets);$state['done']=true; }
+    if ($state['page']>=count($data['pages']) && $state['document']>=count($data['assets'])) { $urls=array();foreach ($assets as $path=>$id) { $urls[$path]=wp_get_attachment_url($id); } foreach ($map as $path=>$id) { $urls[$path]=get_permalink($id); } update_option('ph_url_map',$urls,false);ph_configure($map,$assets);$state['done']=empty($state['errors']); }
     update_option('ph_import_state',$state,false);return $state;
 }
 function ph_configure($map,$assets) {
@@ -80,7 +111,12 @@ function ph_configure($map,$assets) {
     if (!empty($locations['primary'])) { return; } // Preserva o menu já escolhido pelo administrador.
     $menu=wp_create_nav_menu('Portal institucional Pinhalzinho');if (is_wp_error($menu)) { return; }
     $groups=array('A Câmara'=>array('Departamentos'=>'departamentos.html','Mesa Diretora'=>'mesadiretora.html','História'=>'historia.html','Símbolos'=>'simbolos.html','Fotos da cidade'=>'fotos.html'),'Vereadores'=>get_post_type_archive_link('ph_vereador'),'Atividade Legislativa'=>array('Sessões e pautas'=>get_post_type_archive_link('ph_sessao'),'Proposituras'=>get_post_type_archive_link('ph_propositura'),'Legislação e acervo'=>get_post_type_archive_link('ph_documento')),'Transparência'=>array('Portal da Transparência'=>'https://pinhalzinho.amendolaeamendola.com.br/transparenciacamara/','Licitações e contratos'=>get_post_type_archive_link('ph_licitacao'),'Diário Oficial'=>'https://www.pinhalzinho.sp.gov.br/diario-oficial-eletronico','Gestão fiscal'=>'gestaofiscal.html','Balancetes'=>'24.html'),'Serviços ao Cidadão'=>array('Ouvidoria e e-SIC'=>'https://cmpinhalzinho.flowdocs.com.br:2053/public/home','Carta de Serviços'=>'https://www.camarapinhalzinho.sp.gov.br/wa_files/Carta_20de_20Servi_C3_A7os_20ao_20Usus_C3_A1rio_202025_20b.pdf'),'Contato'=>'contato.html');
-    $resolve=function($path) use ($map) { return isset($map[$path]) ? get_permalink($map[$path]) : (strpos($path,'http')===0 ? $path : 'https://www.camarapinhalzinho.sp.gov.br/'.$path); };
+    $resolve=function($path) use ($map,$assets) {
+        $base='https://www.camarapinhalzinho.sp.gov.br/';$key=strpos($path,$base)===0 ? substr($path,strlen($base)) : $path;
+        if (isset($map[$key])) { return get_permalink($map[$key]); }
+        if (isset($assets[$key])) { return wp_get_attachment_url($assets[$key]); }
+        return strpos($path,'http')===0 ? $path : $base.$path;
+    };
     foreach ($groups as $label=>$items) {
         $parent=wp_update_nav_menu_item($menu,0,array('menu-item-title'=>$label,'menu-item-type'=>'custom','menu-item-url'=>is_array($items) ? $resolve(reset($items)) : $resolve($items),'menu-item-status'=>'publish'));
         if (is_array($items)) { foreach ($items as $title=>$path) { wp_update_nav_menu_item($menu,0,array('menu-item-title'=>$title,'menu-item-type'=>'custom','menu-item-url'=>$resolve($path),'menu-item-parent-id'=>$parent,'menu-item-status'=>'publish')); } }
