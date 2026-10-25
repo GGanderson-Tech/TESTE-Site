@@ -1,5 +1,14 @@
 <?php
 if (!defined('ABSPATH')) { exit; }
+function ph_file_title($path) {
+    $name=rawurldecode(basename($path));
+    $name=preg_replace('/_((?:19|20)[0-9]{2})(?=[_.]|$)/',' $1 ',$name);
+    $pattern='/(?:_(?:C[2-9A-F]|D[0-9A-F])_[89AB][0-9A-F]|_E[0-9A-F](?:_[89AB][0-9A-F]){2}|_F[0-4](?:_[89AB][0-9A-F]){3})+/i';
+    $name=preg_replace_callback($pattern,function($m){return rawurldecode(str_replace('_','%',$m[0]));},$name);
+    if (strpos($name,'_28')!==false && strpos($name,'_29')!==false) { $name=str_replace(array('_28','_29'),array('(',')'),$name); }
+    $name=str_replace(array('_20','_'),array(' ',' '),$name);
+    return sanitize_text_field(trim(preg_replace('/\s+/u',' ',preg_replace('/\.(pdf|aspx|jpg|jpeg|png|gif)$/i','',$name))));
+}
 function ph_manifest() {
     static $cached=null;if ($cached!==null) { return $cached; }
     $base=defined('PH_ACERVO_PATH') ? PH_ACERVO_PATH : __DIR__.'/acervo';
@@ -56,7 +65,7 @@ function ph_import_batch_unlocked() {
         $name=wp_unique_filename($upload['path'],basename($item['local']));$target=$upload['path'].'/'.$name;
         try { ph_materialize_asset($base,$item,$target); } catch (Throwable $e) { $state['errors'][]=$e->getMessage();continue; }
         $mime=wp_check_filetype($name);if (!$mime['type']) { unlink($target);$state['errors'][]='Tipo não suportado: '.$item['path'];continue; }
-        $id=wp_insert_attachment(array('post_mime_type'=>$mime['type'],'post_title'=>sanitize_text_field(rawurldecode(basename($item['path']))),'post_status'=>'inherit'),$target,0,true);
+        $id=wp_insert_attachment(array('post_mime_type'=>$mime['type'],'post_title'=>ph_file_title($item['path']),'post_status'=>'inherit'),$target,0,true);
         if (is_wp_error($id)) { $state['errors'][]=$id->get_error_message();continue; }
         update_post_meta($id,'_ph_source_url',$item['url']);update_post_meta($id,'_ph_sha256',$item['sha256']);
         $assets[$item['path']]=$id;update_option('ph_asset_map',$assets,false);
@@ -85,8 +94,7 @@ function ph_import_batch_unlocked() {
         for ($n=0;$n<24 && $state['document']<count($data['assets']);$n++,$state['document']++) {
             $item=$data['assets'][$state['document']];
             if (strtolower(pathinfo($item['local'],PATHINFO_EXTENSION))!=='pdf' || !isset($assets[$item['path']]) || isset($records[$item['path']])) { continue; }
-            $title=rawurldecode(preg_replace('/_([0-9A-Fa-f]{2})/','%$1',basename($item['path'])));
-            $title=sanitize_text_field(preg_replace('/\.(pdf|aspx)$/i','',$title));
+            $title=ph_file_title($item['path']);
             $file=wp_get_attachment_url($assets[$item['path']]);
             $content='<p>Documento público preservado do portal da Câmara. O título reproduz o nome do arquivo original; confira o conteúdo do PDF para sua identificação jurídica.</p><p><a class="button button-outline" href="'.esc_url($file).'">Abrir / baixar PDF</a></p><p class="source-note">Fonte: <a href="'.esc_url($item['url']).'">arquivo no portal original</a>. Consulte o PDF para identificação e datas do ato.</p>';
             $id=wp_insert_post(array('post_type'=>'ph_documento','post_title'=>$title,'post_content'=>$content,'post_status'=>'publish'),true);

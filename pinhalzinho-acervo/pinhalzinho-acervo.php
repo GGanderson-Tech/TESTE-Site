@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Pinhalzinho — Acervo Legislativo
  * Description: Tipos de conteúdo, filtros e importação verificável do acervo público do portal legado.
- * Version: 2.0.0
+ * Version: 2.1.0
  * Requires PHP: 7.4
  * License: GPL-2.0-or-later
  */
