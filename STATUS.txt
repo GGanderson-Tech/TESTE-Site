@@ -1,1 +1,1 @@
-Visual v2 validado. Coleta e importacao completa do acervo ainda em andamento.
+Entrega v2 finalizada. Coleta pública encerrada; arquivos não recuperáveis e limites estão documentados em PENDENCIAS.json e HISTORICO-ACOES.txt. Importação validada em homologação, sem alterar o portal oficial.

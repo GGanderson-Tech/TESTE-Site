@@ -1,0 +1,36 @@
+HISTÓRICO DE AÇÕES — PORTAL CÂMARA DE PINHALZINHO
+Atualizado em 2026-10-25T00:59:28-03:00
+
+SESSÕES ANTERIORES
+1. Inspeção do repositório vazio GGanderson-Tech/TESTE-Site e confirmação de acesso Git.
+2. Primeiro acesso ao portal recusado pela rede do ambiente. Domínios adicionados ao rascunho da configuração.
+3. Criação do protótipo WordPress v1, com notícias, documentos, serviços, busca, responsividade e controles de leitura.
+4. Instalação de WordPress e PHP locais, com SQLite para teste. Validação funcional e geração do ZIP.
+5. Publicação do ZIP v1 em branch de downloads do repositório, após os links internos não funcionarem na interface. Download HTTP 200 e checksum conferidos.
+6. Acesso posterior ao portal original. Identificação de WebAcappella, paleta azul/amarela, largura fixa de 901 px, nove vereadores e 227 páginas no índice público.
+7. Mapeamento dos menus, sistemas externos, fotografias e documentos. Identificação do destino inconsistente do Ato do Presidente nº 08/2026.
+
+ATUALIZAÇÃO V2
+8. Paleta atualizada para azul #022264, amarelo #fef431 e áreas claras de leitura.
+9. Brasão original e fotografia da cidade obtidos do próprio portal; créditos preservados. As fotografias não foram substituídas por imagens inventadas.
+10. Menus reorganizados em A Câmara, Vereadores, Atividade Legislativa, Transparência, Serviços ao Cidadão e Contato. Submenus operáveis por toque e teclado.
+11. Inclusão de cadastros independentes de vereadores, sessões, proposituras, licitações e documentos em plugin próprio. Filtros por assunto, ano, autor e palavra-chave, quando identificáveis no acervo.
+12. Coleta pública de 227 páginas HTML e 4910 arquivos válidos, totalizando 3,163,098,810 bytes. Distribuição por extensão: {'.jpg': 130, '.gif': 10, '.png': 9, '.pdf': 4760, '.aspx': 1}.
+13. Arquivos preservados com URL de origem e SHA-256. Downloads existentes reutilizados; conexões ajustadas para não refazer transferências concluídas. TLS e checksums mantidos ativos. Transferências interrompidas/recusadas registradas.
+14. Decisão do TCE originalmente referenciada com extensão ASPX verificada como PDF e armazenada como .pdf, preservando os bytes e a origem. Conteúdo HTML normalizado para o layout responsivo, removendo posicionamento fixo, scripts e controles legados. Títulos de conteúdo rebaixados para evitar múltiplos H1. Links internos recuperados apontam para registros/arquivos locais.
+15. Associação das nove fotografias aos vereadores corretos e orientação por CSS conforme a fonte. Datas de importação separadas das datas jurídicas dos atos.
+16. Importação na instalação WordPress descartável: 227 páginas, 4910 anexos e 4761 registros de PDFs. 0 divergências de checksum; 0 erros do importador. Reexecução sem duplicações: True.
+17. Testes funcionais aprovados: sete larguras de 320 a 1920 px, brasão/foto, nove vereadores, submenus móveis, Escape, texto ampliado, contraste persistente, filtros, busca, perfil, origem, redirecionamentos legados, licitações e página 404. Erros JavaScript: 0.
+18. Tema ZIP e entrega completa preparados. Capturas desktop/mobile e instruções incluídas. A entrega utiliza uma branch separada; a branch principal não é substituída.
+
+PENDÊNCIAS E LIMITES
+- 41 referências não puderam ser coletadas; detalhes em PENDENCIAS.json. Não são contabilizadas como arquivos importados.
+- A chamada do Ato do Presidente nº 08/2026 no portal aponta para o mesmo PDF identificado como ato de 2022. Destino incorreto não propagado como confirmado; a administração deve fornecer o arquivo correto.
+- O inventário cobre referências públicas encontradas; não inclui arquivos sem links públicos, sistemas autenticados ou conteúdo privado.
+- Títulos de PDFs reproduzem os nomes de arquivos. Ano/assunto inferidos são auxiliares de navegação, sem certificação de vigência ou identidade jurídica. PDFs digitalizados ainda dependem de OCR para busca de texto completo.
+- Páginas históricas que contêm vários atos/processos mantêm o agrupamento original; desmembramento jurídico e estados de tramitação exigem conferência humana.
+- O site oficial não foi alterado. A importação foi executada no WordPress de teste; para outra instalação, instalar tema/plugin e executar o importador conforme LEIA-ME.txt.
+- Não há certificação WCAG/eMAG, auditoria jurídica ou validação de operações dos serviços externos.
+
+FONTE
+https://www.camarapinhalzinho.sp.gov.br/
