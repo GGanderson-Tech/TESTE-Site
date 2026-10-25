@@ -1,5 +1,5 @@
 HISTÓRICO DE AÇÕES — PORTAL CÂMARA DE PINHALZINHO
-Atualizado em 2026-10-25T00:59:28-03:00
+Atualizado em 2026-10-25T01:10:34-03:00
 
 SESSÕES ANTERIORES
 1. Inspeção do repositório vazio GGanderson-Tech/TESTE-Site e confirmação de acesso Git.
@@ -15,16 +15,16 @@ ATUALIZAÇÃO V2
 9. Brasão original e fotografia da cidade obtidos do próprio portal; créditos preservados. As fotografias não foram substituídas por imagens inventadas.
 10. Menus reorganizados em A Câmara, Vereadores, Atividade Legislativa, Transparência, Serviços ao Cidadão e Contato. Submenus operáveis por toque e teclado.
 11. Inclusão de cadastros independentes de vereadores, sessões, proposituras, licitações e documentos em plugin próprio. Filtros por assunto, ano, autor e palavra-chave, quando identificáveis no acervo.
-12. Coleta pública de 227 páginas HTML e 4910 arquivos válidos, totalizando 3,163,098,810 bytes. Distribuição por extensão: {'.jpg': 130, '.gif': 10, '.png': 9, '.pdf': 4760, '.aspx': 1}.
+12. Coleta pública de 227 páginas HTML e 4913 arquivos válidos, totalizando 3,470,921,859 bytes. Distribuição por extensão: {'.jpg': 130, '.gif': 10, '.png': 9, '.pdf': 4763, '.aspx': 1}.
 13. Arquivos preservados com URL de origem e SHA-256. Downloads existentes reutilizados; conexões ajustadas para não refazer transferências concluídas. TLS e checksums mantidos ativos. Transferências interrompidas/recusadas registradas.
-14. Decisão do TCE originalmente referenciada com extensão ASPX verificada como PDF e armazenada como .pdf, preservando os bytes e a origem. Conteúdo HTML normalizado para o layout responsivo, removendo posicionamento fixo, scripts e controles legados. Títulos de conteúdo rebaixados para evitar múltiplos H1. Links internos recuperados apontam para registros/arquivos locais.
+14. PDFs que excederam o limite inicial de 64 MiB coletados por streaming, validados e preparados para transporte em partes com checksum, reconstituição automática no importador e preservação integral de bytes. Decisão do TCE originalmente referenciada com extensão ASPX verificada como PDF e armazenada como .pdf, preservando os bytes e a origem. Conteúdo HTML normalizado para o layout responsivo, removendo posicionamento fixo, scripts e controles legados. Títulos de conteúdo rebaixados para evitar múltiplos H1. Links internos recuperados apontam para registros/arquivos locais.
 15. Associação das nove fotografias aos vereadores corretos e orientação por CSS conforme a fonte. Datas de importação separadas das datas jurídicas dos atos.
-16. Importação na instalação WordPress descartável: 227 páginas, 4910 anexos e 4761 registros de PDFs. 0 divergências de checksum; 0 erros do importador. Reexecução sem duplicações: True.
+16. Importação na instalação WordPress descartável: 227 páginas, 4913 anexos e 4764 registros de PDFs. 0 divergências de checksum; 0 erros do importador. Reexecução sem duplicações: True.
 17. Testes funcionais aprovados: sete larguras de 320 a 1920 px, brasão/foto, nove vereadores, submenus móveis, Escape, texto ampliado, contraste persistente, filtros, busca, perfil, origem, redirecionamentos legados, licitações e página 404. Erros JavaScript: 0.
-18. Tema ZIP e entrega completa preparados. Capturas desktop/mobile e instruções incluídas. A entrega utiliza uma branch separada; a branch principal não é substituída.
+18. Transporte de PDFs grandes validado: 3 documentos reconstituídos com SHA-256 integral idêntico e rejeição de parte com checksum incorreto: True. Tema ZIP e entrega completa preparados. Capturas desktop/mobile e instruções incluídas. A entrega utiliza uma branch separada; a branch principal não é substituída.
 
 PENDÊNCIAS E LIMITES
-- 41 referências não puderam ser coletadas; detalhes em PENDENCIAS.json. Não são contabilizadas como arquivos importados.
+- 38 referências não puderam ser coletadas; detalhes em PENDENCIAS.json. Não são contabilizadas como arquivos importados.
 - A chamada do Ato do Presidente nº 08/2026 no portal aponta para o mesmo PDF identificado como ato de 2022. Destino incorreto não propagado como confirmado; a administração deve fornecer o arquivo correto.
 - O inventário cobre referências públicas encontradas; não inclui arquivos sem links públicos, sistemas autenticados ou conteúdo privado.
 - Títulos de PDFs reproduzem os nomes de arquivos. Ano/assunto inferidos são auxiliares de navegação, sem certificação de vigência ou identidade jurídica. PDFs digitalizados ainda dependem de OCR para busca de texto completo.
