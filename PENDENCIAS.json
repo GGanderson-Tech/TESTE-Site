@@ -153,21 +153,6 @@
     "error": "Client error '403 Forbidden' for url 'https://www.camarapinhalzinho.sp.gov.br/wa_files/Requerimento_20N_C2_BA_2057-2025.pdf'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
   },
   {
-    "path": "wa_files/Lei_589_1993_.pdf",
-    "error": "Arquivo excede 64 MiB; requer transferência separada",
-    "initial_error": "Transferência excedeu 120 segundos; arquivo pendente de nova coleta"
-  },
-  {
-    "path": "wa_files/Pedido_20de_20Informa_C3_A7_C3_A3o_20N_C2_BA_2008-2025_20-_20Resposta_20_283_29.pdf",
-    "error": "Arquivo excede 64 MiB; requer transferência separada",
-    "initial_error": "Transferência excedeu 120 segundos; arquivo pendente de nova coleta"
-  },
-  {
-    "path": "wa_files/pedido_20de_20informa_C3_A7_C3_A3o_20N_C2_BA_2019-2026_20-_20Resposta.pdf",
-    "error": "Arquivo excede 64 MiB; requer transferência separada",
-    "initial_error": "Transferência excedeu 120 segundos; arquivo pendente de nova coleta"
-  },
-  {
     "path": "index.html: Ato do Presidente nº 08/2026",
     "error": "Fonte aponta para o mesmo PDF de Ato da Mesa nº 09/2022. Link incorreto não propagado como confirmado."
   }

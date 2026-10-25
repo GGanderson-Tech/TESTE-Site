@@ -1,9 +1,9 @@
 {
-  "attachments": 4910,
+  "attachments": 4913,
   "pages": 227,
-  "pdf_records": 4761,
+  "pdf_records": 4764,
   "checksum_mismatches": [],
   "import_errors": [],
   "idempotent": true,
-  "collection_failures": 41
+  "collection_failures": 38
 }

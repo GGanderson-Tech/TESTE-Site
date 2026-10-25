@@ -7,6 +7,8 @@ Tema responsivo com identidade azul `#022264`, realces amarelos `#fef431`, bras�
 1. Use uma instalação de homologação e faça backup antes de alterar um site existente. Requer WordPress 6.5+ e PHP 7.4+; prefira versões com suporte atual.
 2. Instale `pinhalzinho.zip` em **Aparência → Temas → Enviar tema** e ative Câmara Pinhalzinho.
 3. Reserve espaço para duas cópias do acervo na hospedagem: uma no pacote do plugin e outra na biblioteca de mídia. Extraia o pacote completo. Envie a pasta `pinhalzinho-acervo` inteira, incluindo `acervo/manifest.json` e `acervo/files/`, para `wp-content/plugins/`, usando SFTP ou o gerenciador de arquivos da hospedagem. O acervo volumoso não deve depender do limite de upload de arquivos do painel.
+Os PDFs grandes são transportados em partes verificadas dentro de `acervo/parts/`; mantenha essa pasta. O importador os reúne automaticamente na biblioteca de mídia e confere o SHA-256 do documento completo, sem alterar seu conteúdo.
+
 4. Ative **Pinhalzinho — Acervo Legislativo** em Plugins.
 5. Vá a **Ferramentas → Acervo Pinhalzinho** e clique em **Importar acervo e configurar navegação**. Aguarde os lotes; a tela informa o progresso e eventuais erros. Mantenha a página aberta. Uma interrupção pode ser retomada pelo mesmo botão; o importador reconhece seus registros e anexos anteriores.
 6. Confira o fuso **America/Sao_Paulo** em Configurações → Geral. Confira o menu, logo, fotografia, contatos e URLs em **Aparência → Personalizar → Câmara: identidade e serviços**. O importador cria o menu principal somente se nenhum menu estiver associado; preserva o menu escolhido pelo administrador.
@@ -23,6 +25,8 @@ O inventário não permite afirmar que arquivos sem qualquer referência públic
 Os títulos dos registros PDF reproduzem nomes de arquivos, convertendo a codificação do sistema legado para texto legível. Ano e assunto extraídos desses nomes são pistas para navegação, não validação jurídica da data, vigência ou autoria. Os arquivos mantêm seu conteúdo. PDFs digitalizados sem camada de texto exigem OCR para busca interna do conteúdo; a busca desta versão cobre títulos e textos HTML, sem alegar indexação integral dos PDFs.
 
 As páginas históricas mantêm contexto; a data de importação não é apresentada como data do ato. O destaque “Ato do Presidente nº 08/2026” do portal original aponta para o mesmo arquivo de um ato de 2022: esse link não foi reproduzido como destino confirmado. A pendência deve ser resolvida pela administração da Câmara. Nenhum documento alternativo foi inventado.
+
+O formulário de contato legado é substituído por links para o e-mail oficial da Secretaria e para a Ouvidoria/e-SIC. Não é necessário configurar SMTP para esses links.
 
 As integrações de Transparência, Ouvidoria/e-SIC, legislação, Diário Oficial e YouTube continuam sendo serviços externos. O tema não implementa nem modifica esses sistemas. Fotografias e documentos mantêm os créditos e direitos de seus titulares; a licença GPL se aplica ao código criado.
 
